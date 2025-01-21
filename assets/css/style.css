@@ -1,1 +1,153 @@
-/* css start */
+/* defualt css  */
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: italic;
+    font-weight: 300;
+    font-stretch: 100%;
+    font-display: swap;
+    src: url('https://fonts.gstatic.com/s/opensans/v40/memtYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWqWtE6FxZCJgvAQ.woff2') format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: top;
+}
+
+/* main css start */
+body {
+    background-color: #232626;
+    /* height: 100vh; */
+}
+
+.main {
+    height: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    background-color: #2e3232;
+    position: fixed;
+    top: 0;
+    left: 0;
+    
+}
+
+.logo {
+    height: 35px;
+    width: 150px;
+}
+
+.logo img {
+    height: 100%;
+    object-fit: contain;
+}
+
+.main ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+
+}
+
+.currancy-bar {
+    height: 45px;
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    border: 2px solid #5a5d5d;
+    border-radius: 10px;
+}
+
+.main ul li {
+    padding: 0 10px;
+    list-style: none;
+}
+
+.main ul li a {
+    text-decoration: none;
+    list-style: none;
+    color: white;
+}
+
+.profile {
+    height: 40px;
+    width: 60px;
+
+}
+
+.profile-img {
+    outline: 4px solid #5a5d5d;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.currancy-btn button {
+    height: 40px;
+    width: 90px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 800;
+    background-image: linear-gradient(90deg, rgb(36, 238, 137), rgb(159, 232, 113));
+    box-shadow: rgba(35, 238, 136, 0.3) 0px 0px 12px, rgb(29, 202, 106) 0px -2px inset;
+}
+
+.currancny-logo {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    left: 10px;
+    background-color: none;
+}
+
+.currancny-logo img {
+    height: 30px;
+    padding-left: 5px;
+}
+
+.currancny-logo div {
+    color: white;
+    float: right;
+}
+
+#price span {
+    font-weight: 800;
+    font-size: 18px;
+}
+
+.currancy-btn i {
+    top: 20px;
+    right: 110px;
+    padding-right: 5px;
+}
+
+
+.container-main{
+    height: 200vh;
+    margin: 0 150px;
+    margin-top: 60px;
+    border: 2px solid red;
+}

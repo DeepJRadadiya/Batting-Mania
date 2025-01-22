@@ -1,14 +1,6 @@
 /* defualt css  */
 
-@font-face {
-    font-family: 'Open Sans';
-    font-style: italic;
-    font-weight: 300;
-    font-stretch: 100%;
-    font-display: swap;
-    src: url('https://fonts.gstatic.com/s/opensans/v40/memtYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWqWtE6FxZCJgvAQ.woff2') format('woff2');
-    unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
-}
+
 
 
 
@@ -45,6 +37,8 @@ img {
 /* main css start */
 body {
     background-color: rgb(36, 38, 38);
+    font-family: "Poppins", serif;
+    font-weight: 500;
     /* height: 100vh; */
 }
 
@@ -60,6 +54,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 10;
 
 }
 
@@ -161,45 +156,111 @@ body {
 /* main container */
 .container-main {
     height: 100vh;
-    margin: 30px 80px;
-    padding: 50px;
+    margin: 100px 80px;
+
 }
 
 /* poster */
 
-.poster{
+.poster {
     height: 250px;
     width: 100%;
-    border-radius: 10px;
     background-color: rgb(41, 45, 46);
     display: flex;
     align-items: center;
     position: relative;
-    background-image: linear-gradient(to right, rgb(46, 112, 81), transparent 40%)
+    background-image: linear-gradient(to right, rgb(46, 112, 81), transparent 40%);
+    border-radius: 12px;
 }
-.poster img{
+
+.poster img {
     position: absolute;
     height: 100%;
     object-fit: contain;
 }
-.poster img:nth-child(1){
+
+.poster img:nth-child(1) {
     left: 10px;
     z-index: 1;
 }
-.poster img:nth-child(2){
+
+.poster img:nth-child(2) {
     right: 15px;
     z-index: 1;
 }
-.poster img:nth-child(3){
+
+.poster img:nth-child(3) {
     right: 0px;
     height: 150px;
     padding-right: 15px;
     z-index: 1;
 }
-.poster img:nth-child(4){
+
+.poster img:nth-child(4) {
     z-index: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
 
+.poster-text {
+    z-index: 1;
+    position: absolute;
+    color: white;
+    left: 10rem;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+
+}
+
+.poster-text p {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.poster-text button {
+    height: 35px;
+    width: 200px;
+    color: black;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 800;
+    background-image: linear-gradient(90deg, rgb(36, 238, 137), rgb(159, 232, 113));
+    box-shadow: rgba(35, 238, 136, 0.3) 0px 0px 12px, rgb(29, 202, 106) 0px -2px inset;
 
 
+}
 
+.poster-join {
+    background-color: #0003;
+    height: 110px;
+    width: 300px;
+    backdrop-filter: blur(3.5px);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.poster-join p:nth-child(1) {
+    font-size: 16px;
+}
+
+.poster-join p:nth-child(2) {
+    font-size: 22px;
+}
+
+.poster-join p:nth-child(2) span {
+    color: rgb(36, 238, 137);
+}
+
+.poster-join p:nth-child(3) {
+    font-size: 16px;
+}

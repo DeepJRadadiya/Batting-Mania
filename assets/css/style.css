@@ -28,9 +28,23 @@ img {
     vertical-align: top;
 }
 
+::-webkit-scrollbar {
+    width: 8px;
+    height: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #141414d5;
+    border-radius: 5px;
+}
+
 /* main css start */
 body {
-    background-color: #232626;
+    background-color: rgb(36, 38, 38);
     /* height: 100vh; */
 }
 
@@ -42,11 +56,11 @@ body {
     align-items: center;
     text-align: center;
     padding: 20px;
-    background-color: #2e3232;
+    background-color: rgb(41, 45, 46);
     position: fixed;
     top: 0;
     left: 0;
-    
+
 }
 
 .logo {
@@ -144,10 +158,48 @@ body {
     padding-right: 5px;
 }
 
-
-.container-main{
-    height: 200vh;
-    margin: 0 150px;
-    margin-top: 60px;
-    border: 2px solid red;
+/* main container */
+.container-main {
+    height: 100vh;
+    margin: 30px 80px;
+    padding: 50px;
 }
+
+/* poster */
+
+.poster{
+    height: 250px;
+    width: 100%;
+    border-radius: 10px;
+    background-color: rgb(41, 45, 46);
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-image: linear-gradient(to right, rgb(46, 112, 81), transparent 40%)
+}
+.poster img{
+    position: absolute;
+    height: 100%;
+    object-fit: contain;
+}
+.poster img:nth-child(1){
+    left: 10px;
+    z-index: 1;
+}
+.poster img:nth-child(2){
+    right: 15px;
+    z-index: 1;
+}
+.poster img:nth-child(3){
+    right: 0px;
+    height: 150px;
+    padding-right: 15px;
+    z-index: 1;
+}
+.poster img:nth-child(4){
+    z-index: 0;
+}
+
+
+
+

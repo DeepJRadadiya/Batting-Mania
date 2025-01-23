@@ -4,7 +4,7 @@ class CustomHeader extends HTMLElement{
         <div class="container">
     <div class="main">
         <div class="logo">
-            <img src="../assets/images/icons/logo.png" alt="logo">
+            <a href='index.html'><img src="../assets/images/icons/logo.png" alt="logo"></a>
         </div>
         <ul>
             <li>
@@ -23,8 +23,8 @@ class CustomHeader extends HTMLElement{
                 </div>
             </li>
             <li><a href="#">Support</a></li>
+            <li><a href="promotion.html">Promotion</a></li>
             <li><a href="#">Sponsorships</a></li>
-            <li><a href="#">Country</a></li>
             <li class="profile"><a href="#"><img src="../assets/images/profile/profile.png" alt="profile img" class="profile-img"></a></li>
         </ul>
     </div>

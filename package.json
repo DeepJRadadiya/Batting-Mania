@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "toastr": "^2.0.4"
+  },
+  "devDependencies": {
+    "css-loader": "^7.1.2",
+    "style-loader": "^4.0.0"
+  }
+}

@@ -28,7 +28,12 @@
     <!-- css -->
     <link rel="stylesheet" href="../assets/css/style.css" />
     <link rel="stylesheet" href="../assets/css/signup.css" />
-  </head>
+    
+    <!-- toster -->
+    <link href="https://cdn.jsdelivr.net/npm/notyf@3.1.0/notyf.min.css"      rel="stylesheet"    />
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3.1.0/notyf.min.js"></script>
+
+</head>
   <body>
     <section class="signup-container">
       <div class="signup">
@@ -40,23 +45,28 @@
           <div class="signup-heading">
             <h3>Sign Up</h3>
           </div>
-          <form action="#">
+          <form action="#" method="post" id="signupForm">
             <div class="form-group">
               <input
                 type="text"
                 id="email"
+                name="email"
                 placeholder="Email / Phone Number"
               />
             </div>
             <div class="form-group">
-              <input type="password" id="password" placeholder="Password" />
+              <input
+                type="password"
+                id="password"
+                placeholder="Password"
+                name="password"
+              />
               <span class="toggle-password">
                 <!-- <i class="fa fa-eye"></i> -->
               </span>
             </div>
 
             <div class="form-group checkbox-group">
-
               <div class="agree1">
                 <span><i class="fa-solid fa-square-check"></i></span>
                 <p>
@@ -69,16 +79,14 @@
                 <span><i class="fa-solid fa-square-check"></i></span>
                 <p>I agree to receive marketing promotions from HASH.GAME.</p>
               </div>
-
             </div>
-            <button type="submit" onclick="login()">Sign Up</button>
+            <button type="submit" id="submit">Sign Up</button>
           </form>
           <div class="signin-link"></div>
         </div>
       </div>
     </section>
 
-    
     <script src="../assets/js/login.js"></script>
   </body>
 </html>

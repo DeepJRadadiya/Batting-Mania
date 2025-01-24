@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Toastr</title>
+
+    <!-- Use Local Toastr CSS -->
+    <link href="css/toastr.min.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Button to trigger Toastr alert -->
+<button onclick="showSuccess()">Show Success</button>
+
+<!-- Use Local Toastr JS -->
+<script src="js/toastr.min.js"></script>
+
+<script>
+    function showSuccess() {
+        toastr.success("This is a success message!");
+    }
+</script>
+
+</body>
+</html>

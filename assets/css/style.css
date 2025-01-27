@@ -110,7 +110,18 @@ body {
     height: 100%;
     border-radius: 50%;
 }
+.logoutbtn {
+    height: 35px;
+    width: 120px;
+    color: black;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 800;
+    background-image: linear-gradient(90deg, rgb(36, 238, 137), rgb(159, 232, 113));
+    box-shadow: rgba(35, 238, 136, 0.3) 0px 0px 12px, rgb(29, 202, 106) 0px -2px inset;
 
+}
 .currancy-btn button {
     height: 40px;
     width: 90px;

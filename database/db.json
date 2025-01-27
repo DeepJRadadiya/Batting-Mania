@@ -1,0 +1,11 @@
+{
+    "users":[
+        {
+            "id" : 1,
+            "email" : "deepradadiya0987@gmial.com",
+            "pass": "abc@123",
+            "isLoggined": true,
+            "score": 0
+        }
+    ]
+}

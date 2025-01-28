@@ -29,8 +29,9 @@ img {
     background: #141414d5;
     border-radius: 5px;
 }
-button{
-   cursor: pointer;
+
+button {
+    cursor: pointer;
 }
 
 /* main css start */
@@ -39,7 +40,7 @@ body {
     font-family: "Poppins", serif;
     font-weight: 500;
     /* height: 100vh; */
-    
+
 }
 
 .main {
@@ -110,6 +111,7 @@ body {
     height: 100%;
     border-radius: 50%;
 }
+
 .logoutbtn {
     height: 35px;
     width: 120px;
@@ -122,6 +124,7 @@ body {
     box-shadow: rgba(35, 238, 136, 0.3) 0px 0px 12px, rgb(29, 202, 106) 0px -2px inset;
 
 }
+
 .currancy-btn button {
     height: 40px;
     width: 90px;
@@ -166,8 +169,8 @@ body {
 
 /* main container */
 .container-main {
-    height: 100vh;
-    margin: 100px 80px;
+    height: 100%;
+    margin: 100px 80px 10px 80px;
 
 }
 
@@ -183,14 +186,14 @@ body {
     background-image: linear-gradient(to right, rgb(46, 112, 81), transparent 40%);
     border-radius: 12px;
     user-select: none;
-    
+
 }
 
 .poster img {
     position: absolute;
     height: 100%;
     object-fit: contain;
-    
+
 }
 
 .poster img:nth-child(1) {
@@ -277,4 +280,63 @@ body {
 
 .poster-join p:nth-child(3) {
     font-size: 16px;
+}
+
+
+/* game section */
+
+.arena {
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+.game-heading {
+    margin: 0 80px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+
+}
+
+.game-title {
+    color: white;
+    font-weight: 900;
+    width: 100%;
+    font-size: 24px;
+}
+
+.game-card {
+    margin: 0 80px;
+    padding: 30px 20px;
+    height: 460px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 40px;
+    transition: all ease-in-out 0.3s;
+
+}
+
+.hilo-game,
+.coin-game {
+    height: 400px;
+    width: 300px;
+
+}
+
+.hilo-game img,
+.coin-game img {
+    border-radius: 20px;
+    object-fit: contain;
+    transition: all ease-in-out 0.4s;
+}
+
+.game-card img:hover {
+    transform: scale(1.08);
+    box-shadow: rgba(141, 56, 197, 0.611) 0px 5px 15px;
+    border-radius: 25px;
 }

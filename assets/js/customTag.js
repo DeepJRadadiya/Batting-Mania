@@ -40,8 +40,8 @@ class CustomHeader extends HTMLElement {
                         <li><a href="#">Support</a></li>
                         <li><a href="promotion.html">Promotion</a></li>
                         <li><a href="#">Sponsorships</a></li>
-                        <li><a href="/views/signup.html">Login</a></li>
-                        <li><a href="signup.html">Signup</a></li>
+                        <li><a href="/views/login.html">Login</a></li>
+                        <li><a href="/views/signup.html">Signup</a></li>
                     </ul>
                 </div>
             </div>

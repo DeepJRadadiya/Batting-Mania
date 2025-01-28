@@ -1,11 +1,18 @@
 {
-    "users":[
-        {
-            "id" : 1,
-            "email" : "deepradadiya0987@gmial.com",
-            "pass": "abc@123",
-            "isLoggined": true,
-            "score": 0
-        }
-    ]
+  "users": [
+    {
+      "id": "1209",
+      "email": "deepradadiya0987@gmail.com",
+      "pass": "deep@1234",
+      "isLoggined": true,
+      "score": 1000
+    },
+    {
+      "id": "9cc5",
+      "email": "gaurav123@gamil.com",
+      "pass": "frdfg4v3",
+      "isLoggined": true,
+      "score": 1000
+    }
+  ]
 }

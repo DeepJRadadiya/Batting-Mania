@@ -1,0 +1,60 @@
+const notyf = new Notyf();
+
+const form = document.getElementById('signupForm');
+form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    // Get form data
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    if (email.length === 0 || password.length === 0) {
+        notyf.error('Email or password is blank');
+        document.getElementById('email').style.border = '2px solid red';
+        document.getElementById('password').style.border = '2px solid red';
+    } else {
+        try {
+            // Check if email already exists
+            const response = await fetch('http://localhost:3000/users');
+            const users = await response.json();
+
+            const emailExists = users.some(user => user.email === email);
+
+            if (emailExists) {
+                notyf.error('This email is already registered. Please log in.');
+                document.getElementById('email').style.border = '2px solid orange';
+                document.getElementById('password').style.border = '2px solid orange';
+            } else {
+                // Create new user object
+                const user = {
+                    email,
+                    pass: password,
+                    isLoggined: true,
+                    score: 1000
+                };
+
+                // Add the new user to db.json
+                const createResponse = await fetch('http://localhost:3000/users', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(user)
+                });
+
+                if (createResponse.ok) {
+                    notyf.success('Welcome!');
+                    form.reset();
+                    document.getElementById('email').style.border = '2px solid green';
+                    document.getElementById('password').style.border = '2px solid green';
+                    window.location.href = '../views/index.html';
+                } else {
+                    notyf.error('Failed to sign up. Please try again.');
+                }
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            notyf.error('An error occurred. Please try again.');
+        }
+    }
+});

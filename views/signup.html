@@ -30,8 +30,9 @@
     <link rel="stylesheet" href="../assets/css/signup.css" />
     
     <!-- toster -->
-    <link href="https://cdn.jsdelivr.net/npm/notyf@3.1.0/notyf.min.css" rel="stylesheet"    />
-    <script src="https://cdn.jsdelivr.net/npm/notyf@3.1.0/notyf.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+    
 
 </head>
   <body>
@@ -41,14 +42,15 @@
           <img src="../assets/images/other/sign up.png" alt="" />
         </div>
 
-        <div class="signup-form">
+        <div class="signup-form" >
           <div class="signup-heading">
-            <h3>Sign Up</h3>
+            <h3>Sign UP</h3>
+            <button class="close"><a href="index.html"><i class="fa-solid fa-xmark"></i></a></button>
           </div>
-          <form\>
+          <form id="signupForm">
             <div class="form-group">
               <input
-                type="text"
+                type="email"
                 id="email"
                 name="email"
                 placeholder="Email / Phone Number"
@@ -80,13 +82,17 @@
                 <p>I agree to receive marketing promotions from HASH.GAME.</p>
               </div>
             </div>
-            <button id="submit">Sign Up</button>
+            <button id="submit" class="signup-button">Sign Up</button>
           </form>
-          <div class="signin-link"></div>
+          <div class="signin-link">
+            <span>Already have an account?</span>
+            <a href="login.html">logIn</a>
+          </div>
         </div>
       </div>
     </section>
 
     <script src="../assets/js/login.js"></script>
+    <script src="../assets/js/signup.js"></script>
   </body>
 </html>

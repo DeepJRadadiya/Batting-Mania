@@ -22,7 +22,7 @@ img {
 }
 
 ::-webkit-scrollbar-track {
-    background: transparent;
+    background: #1e2121;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -59,6 +59,8 @@ body {
 
 }
 
+
+/* navbar */
 .logo {
     height: 35px;
     width: 150px;
@@ -90,7 +92,7 @@ body {
 }
 
 .main ul li {
-    padding: 0 10px;
+    padding: 0 5px;
     list-style: none;
 }
 
@@ -112,17 +114,38 @@ body {
     border-radius: 50%;
 }
 
-.logoutbtn {
+.logoutbtn,
+.signupbtn {
     height: 35px;
-    width: 120px;
+    width: 100px;
     color: black;
     border: none;
     border-radius: 8px;
-    font-size: 14px;
+    font-size: 1rem;
     font-weight: 800;
     background-image: linear-gradient(90deg, rgb(36, 238, 137), rgb(159, 232, 113));
     box-shadow: rgba(35, 238, 136, 0.3) 0px 0px 12px, rgb(29, 202, 106) 0px -2px inset;
 
+}
+
+.loginbtn {
+    height: 35px;
+    width: 100px;
+    color: black;
+    border: 1px solid #e4eaf019;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 800;
+    background-color: transparent;
+
+}
+
+.signupbtn a {
+    color: #1e2121 !important;
+}
+
+.loginbtn a {
+    color: #ffffff !important;
 }
 
 .currancy-btn button {
@@ -313,7 +336,7 @@ body {
     margin: 0 80px;
     padding: 30px 20px;
     height: 460px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     display: flex;
     justify-content: space-evenly;
     gap: 40px;
@@ -326,17 +349,127 @@ body {
     height: 400px;
     width: 300px;
 
+
 }
 
 .hilo-game img,
 .coin-game img {
     border-radius: 20px;
     object-fit: contain;
-    transition: all ease-in-out 0.4s;
+    transition: all ease-in-out 0.3s;
+    box-shadow: rgba(141, 56, 197, 0.611) 0px 5px 15px;
+
 }
 
 .game-card img:hover {
     transform: scale(1.08);
-    box-shadow: rgba(141, 56, 197, 0.611) 0px 5px 15px;
+    box-shadow: rgba(176, 106, 196, 0.734) 0px 5px 15px;
     border-radius: 25px;
+}
+
+
+/* footer css */
+
+.footer {
+    margin-top: 20px;
+    width: 100%;
+    height: 100%;
+    background-color: #1e2121;
+    padding: 10px;
+}
+
+.foot-dis,
+.con-details {
+    padding: 10px;
+}
+
+.foot-dis img {
+    height: 55px;
+    padding: 10px 0;
+}
+
+.con-details h2 {
+    color: white;
+    font-weight: 400;
+    padding-bottom: 10px;
+}
+
+.foot-dis p,
+.con-details p,
+.copyright p {
+    color: #B3BEC1;
+    font-size: .875rem;
+    line-height: 1.25rem;
+    padding: 5px 0;
+}
+
+.con-details {
+    padding-top: 20px;
+}
+
+.con-details span {
+    color: #24ee89;
+    text-decoration: underline;
+
+}
+
+.best-img {
+    padding: 2rem 0;
+    border-top: 2px solid #e4eaf019;
+    border-bottom: 2px solid #e4eaf019;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.best-img img {
+    height: 100px;
+    width: 150px;
+}
+
+.foot-logo {
+    height: 100%;
+    padding: 1rem 0;
+    border-bottom: 2px solid #e4eaf019;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.foot-sign,
+.foot-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+
+.foot-icons {
+    width: 40%;
+}
+
+.foot-sign {
+    width: 55%;
+}
+
+.foot-sign img {
+    height: 80px;
+    aspect-ratio: 3/2;
+    object-fit: contain;
+}
+
+.foot-icons img {
+    height: 50px;
+    aspect-ratio: 3/2;
+    object-fit: contain;
+}
+
+.copyright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
 }

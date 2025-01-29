@@ -1,8 +1,8 @@
 class CustomHeader extends HTMLElement {
     constructor() {
         super();
-        // Initialize userLoggedIn based on localStorage value
-        this.userLoggedIn = localStorage.getItem('userLoggedIn');
+        // Initialize userLoggedIn properly
+        this.userLoggedIn = JSON.parse(localStorage.getItem('userLoggedIn')) || false;
     }
 
     connectedCallback() {
@@ -11,7 +11,7 @@ class CustomHeader extends HTMLElement {
 
     render() {
         if (this.userLoggedIn) {
-            // Render profile and other elements when logged in
+            // Render when logged in
             this.innerHTML = `
             <div class="container">
                 <div class="main">
@@ -28,8 +28,15 @@ class CustomHeader extends HTMLElement {
                 </div>
             </div>
             `;
+
+            // Attach logout event after rendering
+            setTimeout(() => {
+                document.getElementById("logout-btn").addEventListener("click", () => {
+                    this.setLoginStatus(false);
+                });
+            }, 0);
         } else {
-            // Render login and signup buttons when not logged in
+            // Render when not logged in
             this.innerHTML = `
             <div class="container">
                 <div class="main">
@@ -40,27 +47,27 @@ class CustomHeader extends HTMLElement {
                         <li><a href="#">Support</a></li>
                         <li><a href="promotion.html">Promotion</a></li>
                         <li><a href="#">Sponsorships</a></li>
-                        <li><a href="/views/login.html">Login</a></li>
-                        <li><a href="/views/signup.html">Signup</a></li>
+                        <li><button class="loginbtn"><a href="/views/login.html">Login</a></button></li>
+                        <li><button class="signupbtn"><a href="/views/signup.html">Signup</a></button></li>
                     </ul>
                 </div>
             </div>
             `;
         }
-        // Add event listener for logout
-        if (this.userLoggedIn) {
-            document.getElementById("logout-btn").addEventListener("click", () => {
-                this.setLoginStatus(false);
-            });
-        }
     }
 
-    // Method to change the login status
+    // Method to change login status
     setLoginStatus(isLoggedIn) {
         this.userLoggedIn = isLoggedIn;
-        localStorage.setItem('userLoggedIn', isLoggedIn);
-        this.render(); // Re-render the header based on login status
+        if (isLoggedIn) {
+            localStorage.setItem('userLoggedIn', 'true');
+        } else {
+            localStorage.removeItem('userLoggedIn'); // Clear login data
+            window.location.href = "/views/login.html"; // Redirect to login page
+        }
+        this.render();
     }
 }
 
+// Define the custom element
 customElements.define("custom-header", CustomHeader);

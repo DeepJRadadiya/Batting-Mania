@@ -52,9 +52,13 @@ form.addEventListener('submit', async (event) => {
                     notyf.error('Failed to sign up. Please try again.');
                 }
             }
-        } catch (error) {
+        } catch(error){
             console.error('Error:', error);
-            notyf.error('An error occurred. Please try again.');
-        }
+            if (error.message.includes('Failed to fetch')) {
+              notyf.error('Server connection failed! Please check your internet or try again later.');
+            } else {
+              notyf.error('An error occurred. Please try again.');
+            }
+          }
     }
 });

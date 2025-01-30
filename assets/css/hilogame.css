@@ -1,0 +1,207 @@
+.game-arena {
+    height: 475px;
+    width: 91%;
+    /* border: 2px solid red; */
+    margin: 90px 60px 20px 60px;
+    display: flex;
+    border-radius: 20px;
+    color: white;
+}
+
+.batting-side {
+    height: 100%;
+    background-color: rgb(50, 55, 56);
+    width: 30%;
+    border-radius: 20px 0 0 20px;
+    padding: 10px;
+}
+
+.game-side {
+    width: 70%;
+    height: 100%;
+    background-color: rgb(41, 45, 46);
+    /* border: 2px solid green; */
+    border-radius: 0 20px 20px 0;
+}
+
+.batting-side p {
+    padding: 0 0 5px 5px;
+    color: #B3BEC1;
+    font-size: 14px;
+
+}
+
+.secoreBord {
+    width: 100%;
+    height: 45px;
+    background-color: rgb(41, 45, 46);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+
+.scoreDisp {
+
+    gap: 10px;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.scoreDisp img {
+    object-fit: contain;
+    height: 25px;
+    width: 25px;
+}
+
+.incbutton button {
+    height: 36px;
+    width: 55px;
+    border-radius: 8px;
+    color: white;
+    border: none;
+    background-color: rgb(58, 65, 66);
+
+
+}
+.batting-display{
+    margin: 10px 0 10px 0;
+}
+
+.hilo-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.higer,
+.lower {
+    width: 50%;
+    height: 50px;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    background-color: rgb(58, 65, 66);
+    border: none;
+    color: white;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.higer span,
+.lower span {
+    padding-top: 6px;
+    font-size: 14px;
+}
+
+.higer-txt span,
+.lower-txt span {
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+
+
+.skip-btn button {
+    height: 40px;
+    width: 100%;
+    margin: 4px 0 5px 0;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    background-color: rgb(58, 65, 66);
+
+}
+
+.bet-btn {
+    margin: 0 0 20px 0;
+    height: 40px;
+    width: 100%;
+    color: black;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 800;
+    background-image: linear-gradient(90deg, rgb(36, 238, 137), rgb(159, 232, 113));
+    box-shadow: rgba(35, 238, 136, 0.3) 0px 0px 12px, rgb(29, 202, 106) 0px -2px inset;
+
+}
+
+
+/* gameing side css */
+.game-side{
+    padding: 20px;
+}
+
+.game{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.high-btn, .low-btn{
+height: 50%;
+display: flex;
+flex-direction: column;
+align-items: center;
+position: relative;
+}
+
+.high-img span{
+    position: absolute;
+   right: 66px;
+   top: 100px;
+
+}
+.low-img span{
+    position: absolute;
+    right: 66px;
+    top: 75px;
+
+}
+
+.high-img img, .low-img img{
+    height: 150px;
+    width: 150px;
+    object-fit: contain;
+}
+
+.cards{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.cards-img img{
+    height: 240px;
+    width: 150px;
+    object-fit: contain;
+}
+
+.skipbtn{
+    position: absolute;
+    bottom: 0;
+}
+.skipbtn button{
+    height: 35px;
+    width: 70px;
+    border-radius: 10px;
+    background-color: #4a5354;
+    font-size: 16px;
+    border: none;
+    color: white;
+    
+}
+

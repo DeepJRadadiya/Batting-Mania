@@ -47,7 +47,8 @@ form.addEventListener('submit', async (event) => {
                     form.reset();
                     document.getElementById('email').style.border = '2px solid green';
                     document.getElementById('password').style.border = '2px solid green';
-                    window.location.href = '../views/index.html';
+                    window.location.href = '../views/login.html';
+                  
                 } else {
                     notyf.error('Failed to sign up. Please try again.');
                 }

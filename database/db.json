@@ -13,6 +13,13 @@
       "pass": "2822006",
       "isLoggined": true,
       "score": 1000
+    },
+    {
+      "id": "462b",
+      "email": "deepradadiya087@gmail.com",
+      "pass": "deep@1234",
+      "isLoggined": true,
+      "score": 1000
     }
   ]
 }

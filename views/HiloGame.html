@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Battle of Champions</title>
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../assets/images/icons/black.png"
+      sizes="32x32"
+    />
+    <!-- Link to Font Awesome CDN -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- css -->
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/hilogame.css" />
+
+    <!-- toster -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/notyf@3.1.0/notyf.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3.1.0/notyf.min.js"></script>
+  </head>
+  <body>
+    <!-- this is custom-hearder for navbar-->
+    <custom-header></custom-header>
+    <div class="overlay" id="overlay"></div>
+
+    <!-- profile card -->
+    <section>
+      <div class="profile-card" id="profile-card">
+        <div class="profile-Head">
+          <h1>My Profile</h1>
+          <button class="profile-close" id="profile-close">
+            <i class="fa-solid fa-xmark" style="color: white !important"></i>
+          </button>
+        </div>
+        <div class="profile-body">
+          <img
+            src="../assets/images/profile/profile.png"
+            alt="Profile Picture"
+          />
+          <h3>John Doe</h3>
+          <p>Email: johndoe@example.com</p>
+          <button id="logout-btn" class="logoutbtn">Logout</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- hilo game arena -->
+    <section>
+      <div class="game-arena">
+
+        <!-- batting side -->
+        <div class="batting-side">
+          <p>Amount</p>
+          <div class="secoreBord">
+            <div class="scoreDisp">
+              <img src="../assets/images/icons/INR.rect.png" alt="inr flag" />
+              <span>0.00</span>
+            </div>
+            <div class="incbutton">
+              <button>1/2</button>
+              <button>2x</button>
+            </div>
+          </div>
+          <div class="batting-display">
+            <div class="hilo-controls">
+              <button class="higer">
+                <span
+                  ><i class="fa-solid fa-angles-down" style="color: #ffd43b"></i
+                ></span>
+                <div class="higer-txt">
+                  <span>Higher or Same</span>
+                  <br />
+                  <span>7.69%</span>
+                </div>
+              </button>
+
+              <button class="lower">
+                <span
+                  ><i
+                    class="fa-solid fa-angles-down fa-flip-vertical"
+                    style="color: #74c0fc"
+                  ></i
+                ></span>
+                <div class="lower-txt">
+                  <span>lower or Same</span>
+                  <br />
+                  <span>72.69%</span>
+                </div>
+              </button>
+            </div>
+            <div class="skip-btn">
+              <button>skip</button>
+            </div>
+          </div>
+          <div class="batting-btn">
+            <button class="bet-btn">Bet</button>
+          </div>
+        </div>
+
+        <!-- game side arena -->
+        <div class="game-side">
+          <div class="game">
+
+            <div class="high-btn">
+              <p class="chanceOfhi">7.69%</p>
+              <div class="high-img">
+                <img src="../assets/images/icons/higher-6db00945.png" alt="high img">
+                <span>HI</span>
+              </div>
+              <p class="txt-game">Higher Or Same</p>
+            </div>
+
+            <div class="cards">
+              <div class="cards-img">
+                <img src="../assets/images/cards/0.png" alt="">
+              </div>
+              <div class="skipbtn">
+                <button>skip</button>
+              </div>
+            </div>
+
+            <dib class="low-btn">
+              <p class="chanceOflo">7.69%</p>
+              <div class="low-img">
+                <img src="../assets/images/icons/lower-392abdfc.png" alt="low img">
+                <span>HI</span>
+              </div>
+              <p class="txt-game">Higher Or Same</p>
+            </dib>
+          </div>
+
+          <!-- low high and profit bord -->
+          <div class="gameScoreBord"></div>
+        </div>
+
+
+      </div>
+    </section>
+
+    <script src="../assets/js/customTag.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/Profilecard.js"></script>
+  </body>
+</html>

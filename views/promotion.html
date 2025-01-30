@@ -24,13 +24,49 @@
       rel="stylesheet"
     />
 
+    <!-- toster -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/notyf@3.1.0/notyf.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3.1.0/notyf.min.js"></script>
+
     <!-- css file -->
-    <link rel="stylesheet" href="../assets/css/style.css" />
     <link rel="stylesheet" href="../assets/css/promotion.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+
+    <!-- custom tag js -->
+    <script src="../assets/js/customTag.js"></script>
   </head>
   <body>
+    <!-- navbar -->
     <custom-header></custom-header>
+    <div class="overlay" id="overlay"></div>
 
+    <!-- profile card -->
+    <section>
+      <div class="profile-card" id="profile-card">
+        <div class="profile-Head">
+          <h1>My Profile</h1>
+          <button class="profile-close">
+            <a href="index.html"
+              ><i class="fa-solid fa-xmark" style="color: white !important"></i
+            ></a>
+          </button>
+        </div>
+        <div class="profile-body">
+          <img
+            src="../assets/images/profile/profile.png"
+            alt="Profile Picture"
+          />
+          <h3>John Doe</h3>
+          <p>Email: johndoe@example.com</p>
+          <button id="logout-btn" class="logoutbtn">Logout</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- promo section -->
     <section>
       <div class="promotion-container">
         <div class="first-promo">
@@ -210,7 +246,62 @@
 
             <div class="promo-condition">
               <p>Terms and Conditions</p>
-              <ol type="1"><li><span style="font-size: 14px;">Open to all BC.GAME players betting on the 1X2 market in LaLiga</span></li><li><span style="font-size: 14px;">Players can place an unlimited number of qualifying bets during the promotion period</span></li><li><span style="font-size: 14px;">Only bets placed and settled during the promotion period qualify</span></li><li><span style="font-size: 14px;">Real money bets only; bonus bets excluded</span></li><li><span style="font-size: 14px;">Cancelled, refunded, cashed out, and combo bets are ineligible</span></li><li><span style="font-size: 14px;">All currencies in USD unless specified otherwise</span></li><li><span style="font-size: 14px;">European odds format used</span></li><li><span style="font-size: 14px;">BC.GAME reserves the right to modify or cancel the promotion at any time</span></li><li><span style="font-size: 14px;">Rewards may be withheld for suspected fraudulent activity or technical issues</span></li><li><span style="font-size: 14px;">BC.GAME's decision is final in all disputes</span></li></ol>
+              <ol type="1">
+                <li>
+                  <span style="font-size: 14px"
+                    >Open to all BC.GAME players betting on the 1X2 market in
+                    LaLiga</span
+                  >
+                </li>
+                <li>
+                  <span style="font-size: 14px"
+                    >Players can place an unlimited number of qualifying bets
+                    during the promotion period</span
+                  >
+                </li>
+                <li>
+                  <span style="font-size: 14px"
+                    >Only bets placed and settled during the promotion period
+                    qualify</span
+                  >
+                </li>
+                <li>
+                  <span style="font-size: 14px"
+                    >Real money bets only; bonus bets excluded</span
+                  >
+                </li>
+                <li>
+                  <span style="font-size: 14px"
+                    >Cancelled, refunded, cashed out, and combo bets are
+                    ineligible</span
+                  >
+                </li>
+                <li>
+                  <span style="font-size: 14px"
+                    >All currencies in USD unless specified otherwise</span
+                  >
+                </li>
+                <li>
+                  <span style="font-size: 14px">European odds format used</span>
+                </li>
+                <li>
+                  <span style="font-size: 14px"
+                    >BC.GAME reserves the right to modify or cancel the
+                    promotion at any time</span
+                  >
+                </li>
+                <li>
+                  <span style="font-size: 14px"
+                    >Rewards may be withheld for suspected fraudulent activity
+                    or technical issues</span
+                  >
+                </li>
+                <li>
+                  <span style="font-size: 14px"
+                    >BC.GAME's decision is final in all disputes</span
+                  >
+                </li>
+              </ol>
             </div>
           </div>
         </div>
@@ -218,7 +309,6 @@
     </section>
 
     <!-- js -->
-    <script src="../assets/js/script.js"></script>
-    <script src="../assets/js/customTag.js"></script>
+    <script src="../assets/js/Profilecard.js"></script>
   </body>
 </html>

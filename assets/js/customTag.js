@@ -22,8 +22,7 @@ class CustomHeader extends HTMLElement {
                         <li><a href="#">Support</a></li>
                         <li><a href="promotion.html">Promotion</a></li>
                         <li><a href="#">Sponsorships</a></li>
-                        <li><button id="logout-btn" class="logoutbtn">Logout</button></li>
-                        <li class="profile"><a href="#"><img src="../assets/images/profile/profile.png" alt="profile img" class="profile-img"></a></li>
+                        <li class="profile"><a href="#"><img src="../assets/images/profile/profile.png" alt="profile img" class="profile-img" id="profile-btn"></a></li>
                     </ul>
                 </div>
             </div>

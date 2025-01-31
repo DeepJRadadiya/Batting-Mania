@@ -34,12 +34,15 @@
       rel="stylesheet"
     />
     <script src="https://cdn.jsdelivr.net/npm/notyf@3.1.0/notyf.min.js"></script>
+
+   
+
   </head>
   <body>
     <!-- this is custom-hearder for navbar-->
     <custom-header></custom-header>
     <div class="overlay" id="overlay"></div>
-
+    <ToastContainer />
     <!-- profile card -->
     <section>
       <div class="profile-card" id="profile-card">
@@ -68,21 +71,21 @@
         <!-- batting side -->
         <div class="batting-side">
           <p>Amount</p>
-          <div class="secoreBord">
+          <div class="secoreBord" id="scoreingTab">
             <div class="scoreDisp">
               <img src="../assets/images/icons/INR.rect.png" alt="inr flag" />
-              <span id="displayVal">0.00</span>
+              <input type="number" id="batingMoney" value="0" minlength="0" maxlength="5"/>
             </div>
             <div class="incbutton">
-              <button>1/2</button>
-              <button>2x</button>
+              <button id="halftoMoney">1/2</button>
+              <button id="doubletoMoney">2x</button>
             </div>
           </div>
-          <div class="batting-display">
-            <div class="hilo-controls">
+          <div class="batting-display blurDisplayEffect" >
+            <div class="hilo-controls" >
               <button class="higer">
                 <span
-                  ><i class="fa-solid fa-angles-down" style="color: #ffd43b"></i
+                  ><i class="fa-solid fa-angles-up" style="color: #ffd43b"></i
                 ></span>
                 <div class="higer-txt">
                   <span>Higher or Same</span>
@@ -94,7 +97,7 @@
               <button class="lower">
                 <span
                   ><i
-                    class="fa-solid fa-angles-down fa-flip-vertical"
+                    class="fa-solid fa-angles-down"
                     style="color: #74c0fc"
                   ></i
                 ></span>
@@ -106,7 +109,7 @@
               </button>
             </div>
             <div class="skip-btn">
-              <button id="cardgenBtn2">skip</button>
+              <button id="cardskipBtn1">skip</button>
             </div>
           </div>
           <div class="batting-btn">
@@ -118,9 +121,9 @@
         <div class="game-side">
           <div class="game">
 
-            <div class="high-btn">
+            <div class="high-btn blurDisplayEffect">
               <p class="chanceOfhi">7.69%</p>
-              <div class="high-img" id="hiImg">
+              <div class="high-img" id="hiImg" >
                 <img src="../assets/images/icons/higher-6db00945.png" alt="high img" >
                 <span>HI</span>
               </div>
@@ -132,15 +135,15 @@
                 <img src="../assets/images/cards/0.png" alt="" id="HiloCardImg">
               </div>
               <div class="skipbtn">
-                <button id="cardgenBtn">skip</button>
+                <button id="cardskipBtn2" class="blurDisplayEffect">skip</button>
               </div>
             </div>
 
-            <dib class="low-btn">
+            <dib class="low-btn blurDisplayEffect">
               <p class="chanceOflo">7.69%</p>
-              <div class="low-img" id="lowImg">
+              <div class="low-img " id="lowImg" >
                 <img src="../assets/images/icons/lower-392abdfc.png" alt="low img" >
-                <span>LO</span>
+                <span >LO</span>
               </div>
               <p class="txt-game">Higher Or Same</p>
             </dib>
@@ -148,9 +151,40 @@
 
           <!-- low high and profit bord -->
           <div class="gameScoreBord">
-            <div class="profithi"></div>
-            <div class="profitlow"></div>
-            <div class="totalprofit"></div>
+            <div class="profithi">
+              <p>Profit Higher</p>
+              <div class="profithi-bord">
+                <div class="profithi-bordImg">
+                  <img src="../assets/images/icons/INR.rect.png" alt="high img" >
+                  <span>0.00</span>
+                </div>
+                <div class="highArrow">
+                  <span ><i class="fa-solid fa-angles-up" style="color: #ffd43b"></i></span>                
+                </div>
+              </div>
+            </div>
+            <div class="profitlow">
+              <p>Profit Lower</p>
+              <div class="profitlow-bord">
+                <div class="profithi-bordImg">
+                  <img src="../assets/images/icons/INR.rect.png" alt="high img" >
+                  <span>0.00</span>
+                </div>
+                <div class="highArrow">
+                  <span><i class="fa-solid fa-angles-down " style="color: #74c0fc" ></i ></span>
+                </div>
+              </div>
+            </div>
+            <div class="totalprofit">
+              <p>Total Profit</p>
+              <div class="totalprofit-bord">
+                <div class="profithi-bordImg">
+                  <img src="../assets/images/icons/INR.rect.png" alt="high img" >
+                  <span id="totalProfitScore">0.00</span>
+                </div>
+
+              </div>
+            </div>
           </div>
         </div>
 
@@ -159,8 +193,10 @@
     </section>
 
     <script src="../assets/js/customTag.js"></script>
-    <script src="../assets/js/main.js"></script>
+    <!-- <script src="../assets/js/main.js"></script> -->
     <script src="../assets/js/Profilecard.js"></script>
     <script src="../assets/js/Hilo.js"></script>
+   
+
   </body>
 </html>

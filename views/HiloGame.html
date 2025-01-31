@@ -71,7 +71,7 @@
           <div class="secoreBord">
             <div class="scoreDisp">
               <img src="../assets/images/icons/INR.rect.png" alt="inr flag" />
-              <span>0.00</span>
+              <span id="displayVal">0.00</span>
             </div>
             <div class="incbutton">
               <button>1/2</button>
@@ -106,11 +106,11 @@
               </button>
             </div>
             <div class="skip-btn">
-              <button>skip</button>
+              <button id="cardgenBtn2">skip</button>
             </div>
           </div>
           <div class="batting-btn">
-            <button class="bet-btn">Bet</button>
+            <button class="bet-btn" id="betHandeler">Bet</button>
           </div>
         </div>
 
@@ -120,8 +120,8 @@
 
             <div class="high-btn">
               <p class="chanceOfhi">7.69%</p>
-              <div class="high-img">
-                <img src="../assets/images/icons/higher-6db00945.png" alt="high img">
+              <div class="high-img" id="hiImg">
+                <img src="../assets/images/icons/higher-6db00945.png" alt="high img" >
                 <span>HI</span>
               </div>
               <p class="txt-game">Higher Or Same</p>
@@ -129,25 +129,29 @@
 
             <div class="cards">
               <div class="cards-img">
-                <img src="../assets/images/cards/0.png" alt="">
+                <img src="../assets/images/cards/0.png" alt="" id="HiloCardImg">
               </div>
               <div class="skipbtn">
-                <button>skip</button>
+                <button id="cardgenBtn">skip</button>
               </div>
             </div>
 
             <dib class="low-btn">
               <p class="chanceOflo">7.69%</p>
-              <div class="low-img">
-                <img src="../assets/images/icons/lower-392abdfc.png" alt="low img">
-                <span>HI</span>
+              <div class="low-img" id="lowImg">
+                <img src="../assets/images/icons/lower-392abdfc.png" alt="low img" >
+                <span>LO</span>
               </div>
               <p class="txt-game">Higher Or Same</p>
             </dib>
           </div>
 
           <!-- low high and profit bord -->
-          <div class="gameScoreBord"></div>
+          <div class="gameScoreBord">
+            <div class="profithi"></div>
+            <div class="profitlow"></div>
+            <div class="totalprofit"></div>
+          </div>
         </div>
 
 
@@ -157,5 +161,6 @@
     <script src="../assets/js/customTag.js"></script>
     <script src="../assets/js/main.js"></script>
     <script src="../assets/js/Profilecard.js"></script>
+    <script src="../assets/js/Hilo.js"></script>
   </body>
 </html>

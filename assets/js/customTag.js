@@ -26,7 +26,7 @@ class CustomHeader extends HTMLElement {
                                     <img src="../assets/images/icons/BC.webp" alt="logo" >
                                     <div id="price">
                                         <span class="money-logo"><i class="fa-solid fa-indian-rupee-sign fa-xs" style="color: #ffffff;"></i></span>
-                                        <span id='moneyOfBC'>1000.0</span>
+                                        <span id='moneyOfBC'>1000</span>
                                     </div>
                                 </div>
                                 <div class="currancy-btn">

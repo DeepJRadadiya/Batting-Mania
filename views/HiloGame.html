@@ -74,7 +74,7 @@
           <div class="secoreBord" id="scoreingTab">
             <div class="scoreDisp">
               <img src="../assets/images/icons/INR.rect.png" alt="inr flag" />
-              <input type="number" id="batingMoney" value="0" minlength="0" maxlength="5"/>
+              <input type="number" id="batingMoney" value="" minlength="0" maxlength="5" placeholder="0.00"/>
             </div>
             <div class="incbutton">
               <button id="halftoMoney">1/2</button>
@@ -90,7 +90,7 @@
                 <div class="higer-txt">
                   <span>Higher or Same</span>
                   <br />
-                  <span>7.69%</span>
+                  <span id="probabilityofHSinBatSide">7.69%</span>
                 </div>
               </button>
 
@@ -104,7 +104,7 @@
                 <div class="lower-txt">
                   <span>lower or Same</span>
                   <br />
-                  <span>72.69%</span>
+                  <span id="probabilityofLSinBatSide" >72.69%</span>
                 </div>
               </button>
             </div>
@@ -123,7 +123,7 @@
           <div class="game">
 
             <div class="high-btn blurDisplayEffect">
-              <p class="chanceOfhi">7.69%</p>
+              <p class="chanceOfhi" id="probabilityofHSinGameSide">7.69%</p>
               <div class="high-img" id="hiImg" >
                 <img src="../assets/images/icons/higher-6db00945.png" alt="high img" >
                 <span>HI</span>
@@ -141,10 +141,10 @@
             </div>
 
             <dib class="low-btn blurDisplayEffect">
-              <p class="chanceOflo">7.69%</p>
+              <p class="chanceOflo" id="probabilityofLSinGameSide">7.69%</p>
               <div class="low-img " id="lowImg" >
                 <img src="../assets/images/icons/lower-392abdfc.png" alt="low img" >
-                <span >LO</span>
+                <span>LO</span>
               </div>
               <p class="txt-game">Higher Or Same</p>
             </dib>
@@ -153,11 +153,11 @@
           <!-- low high and profit bord -->
           <div class="gameScoreBord">
             <div class="profithi">
-              <p>Profit Higher</p>
+              <p>Profit Higher (<span id="hiProfiter">0</span>X)</p>
               <div class="profithi-bord">
                 <div class="profithi-bordImg">
                   <img src="../assets/images/icons/INR.rect.png" alt="high img" >
-                  <span>0.00</span>
+                  <span id="profitCalFromHi">0</span>
                 </div>
                 <div class="highArrow">
                   <span ><i class="fa-solid fa-angles-up" style="color: #ffd43b"></i></span>                
@@ -165,11 +165,11 @@
               </div>
             </div>
             <div class="profitlow">
-              <p>Profit Lower</p>
+              <p>Profit Lower (<span id="loProfiter">0</span>X)</p>
               <div class="profitlow-bord">
                 <div class="profithi-bordImg">
                   <img src="../assets/images/icons/INR.rect.png" alt="high img" >
-                  <span>0.00</span>
+                  <span id="profitCalFromLo">0</span>
                 </div>
                 <div class="highArrow">
                   <span><i class="fa-solid fa-angles-down " style="color: #74c0fc" ></i ></span>

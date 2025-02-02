@@ -88,7 +88,6 @@ class CustomHeader extends HTMLElement {
 customElements.define("custom-header", CustomHeader); // Define the custom element
 
 
-
 async function abcfun() {
   let logUserId = localStorage.getItem("loggedinUserId");
   logUserId = logUserId.replace(/"/g, "").trim(); // Clean user ID
@@ -102,6 +101,7 @@ async function abcfun() {
     const users = await response.json();
     let alloverMoney = document.getElementById("moneyOfBC");
     alloverMoney.value = users.money;
+    
   } catch (error) {
     console.error("Server error:", error.message);
     alert("Server error: " + error.message); // Handle error gracefully

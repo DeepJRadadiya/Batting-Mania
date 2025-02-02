@@ -26,7 +26,7 @@ class CustomHeader extends HTMLElement {
                                     <img src="../assets/images/icons/BC.webp" alt="logo" >
                                     <div id="price">
                                         <span class="money-logo"><i class="fa-solid fa-indian-rupee-sign fa-xs" style="color: #ffffff;"></i></span>
-                                        <span id='moneyOfBC'>1000</span>
+                                        <span><input type='text' name='money' id='moneyOfBC' value='0'  disabled/></span>
                                     </div>
                                 </div>
                                 <div class="currancy-btn">
@@ -43,13 +43,15 @@ class CustomHeader extends HTMLElement {
                 </div>
             </div>
             `;
-
+            document.addEventListener("DOMContentLoaded", () => {
+              abcfun();
+          });
       // Attach logout event after rendering
       setTimeout(() => {
         document.getElementById("logout-btn").addEventListener("click", () => {
           this.setLoginStatus(false);
         });
-      }, 0);
+      }, 1000);
     } else {
       // Render when not logged in
       this.innerHTML = `
@@ -83,6 +85,25 @@ class CustomHeader extends HTMLElement {
     this.render();
   }
 }
+customElements.define("custom-header", CustomHeader); // Define the custom element
 
-// Define the custom element
-customElements.define("custom-header", CustomHeader);
+
+
+async function abcfun() {
+  let logUserId = localStorage.getItem("loggedinUserId");
+  logUserId = logUserId.replace(/"/g, "").trim(); // Clean user ID
+
+  try {
+    const response = await fetch(`http://localhost:3000/users/${logUserId}`);
+    if (!response.ok) {
+      throw new Error("User not found");
+    }
+
+    const users = await response.json();
+    let alloverMoney = document.getElementById("moneyOfBC");
+    alloverMoney.value = users.money;
+  } catch (error) {
+    console.error("Server error:", error.message);
+    alert("Server error: " + error.message); // Handle error gracefully
+  }
+}

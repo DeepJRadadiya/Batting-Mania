@@ -40,11 +40,15 @@ form.addEventListener("submit", async (event) => {
         //if email exist
         // console.log(user.pass,passwordvalue)
         if (user.pass === passwordvalue) {
+          localStorage.setItem("loggedInUser", JSON.stringify(user)); // user details
           localStorage.setItem("userLoggedIn", true); //  login status
+          localStorage.setItem('loggedinUserId',JSON.stringify(user.id))
+          
           notyf.success(`Welcome, BC.Game's hero!`);
           setTimeout(() => {
             window.location.href = "index.html"; // redirect to index page
           }, 1500);//sec in ms
+         
         } else {
           notyf.error("password or email was wrong!");
         }

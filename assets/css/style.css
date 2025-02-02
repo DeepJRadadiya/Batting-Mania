@@ -40,6 +40,7 @@ body {
     font-family: "Poppins", serif;
     font-weight: 500;
     /* height: 100vh; */
+    user-select: none;
 
 }
 
@@ -180,6 +181,18 @@ body {
     float: right;
 }
 
+#moneyOfBC{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    width: 70px;
+    height: 30px;
+    color: white;
+    font-weight: 800;
+    font-size: 18px;
+    margin-left: 2px;
+    user-select: none;
+}
 #price span {
     font-weight: 800;
     font-size: 18px;

@@ -1,3 +1,8 @@
+
+let userEmails = document.getElementById("userEmails");
+let userName = document.getElementById("userName");
+
+
 document.addEventListener("DOMContentLoaded", () => {
   // profile card css
   let userLogged = JSON.parse(localStorage.getItem("userLoggedIn")) || false;
@@ -35,5 +40,21 @@ document.addEventListener("DOMContentLoaded", () => {
       overlay.style.display = "none";
       document.body.style.overflow = "auto";
     });
+  }
+});
+
+
+document.addEventListener("DOMContentLoaded", async () => {
+  const user = JSON.parse(localStorage.getItem("loggedInUser"));
+  
+  if (user) {
+    if (userEmails) {
+      userEmails.innerHTML = user.email;
+    }
+    if (userName) {
+      userName.innerHTML = user.email.split("@")[0];
+    }
+  } else {
+    notyf.error("Cannot log in");
   }
 });

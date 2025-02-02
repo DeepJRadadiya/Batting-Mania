@@ -30,14 +30,13 @@ form.addEventListener('submit', async (event) => {
                     email,
                     pass: password,
                     isLoggined: true,
-                    score: 1000
+                    money: 1000
                 };
 
                 // Add the new user to db.json
                 const createResponse = await fetch('http://localhost:3000/users', {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
+                    headers: { 'Content-Type': 'application/json'
                     },
                     body: JSON.stringify(user)
                 });

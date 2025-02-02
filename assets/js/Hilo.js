@@ -15,6 +15,8 @@ let casoutState = false;
 let prevVal = null;
 let randVal = null;
 let score = 0;
+let logUserId = localStorage.getItem("loggedinUserId");
+logUserId = logUserId.replace(/"/g, '').trim();
 
 // disabel all btn
 const elements = [cardskipBtn1, cardskipBtn2, hiImg, lowImg];
@@ -37,6 +39,7 @@ function afterBattingClick() {
   betHandelerbtn.classList.add("signoutbtn");
   betHandelerbtn.innerText = "Cash out";
 }
+
 function afterCasoutClick() {
   elements.forEach((el) => (el.style.cursor = ""));
   Array.from(document.getElementsByClassName("blurDisplayEffect")).forEach(
@@ -58,9 +61,13 @@ function afterCasoutClick() {
   HiloCardImg.style.outline = "";
   casoutState = false;
   if (!(score === 0)) {
-    alloverMoney.innerHTML = Number(alloverMoney.innerHTML) + score + investVal;
+    alloverMoney.value = Number(alloverMoney.value) + score + investVal;
+    // moneyChanged(alloverMoney.value)
+    updateMoneyInDatabase(logUserId, Number(alloverMoney.value));
   }
+
   totalProfitScore.innerHTML = 0;
+  updateMoneyInDatabase(logUserId, Number(alloverMoney.value));
 }
 
 //half button
@@ -121,6 +128,7 @@ function gameHandler() {
       }, 2000);
     } else {
       totalProfitScore.innerHTML = score;
+      
     }
   }
 
@@ -140,11 +148,11 @@ function gameHandler() {
   function lowImgHandler() {
     cardgenBtnHandler();
     if (prevVal >= randVal) {
-      //   console.log("low", prevVal, randVal);
+        console.log("low", prevVal, randVal);
       score += 1;
       scoreset();
     } else {
-      //   console.log("game over");
+        console.log("game over");
       score = 0;
       scoreset();
     }
@@ -155,7 +163,8 @@ function gameHandler() {
   hiImg.addEventListener("click", hiImgHandler);
 }
 
-betHandelerbtn.addEventListener("click", () => {
+betHandelerbtn.addEventListener("click", (event) => {
+  event.preventDefault();
   let value = Number(batingMoney.value);
   if (!casoutState) {
     //button will be work as bat btn
@@ -168,11 +177,14 @@ betHandelerbtn.addEventListener("click", () => {
         className: "warning",
       });
     } else if (value >= 10 && value <= 5000) {
-      money = Number(alloverMoney.innerHTML) - value;
-      if (alloverMoney.innerHTML < value) {
+      money = Number(alloverMoney.value) - value;
+      if (alloverMoney.valueL < value) {
         notyf.error("you hav not enough balance");
       } else {
-          alloverMoney.innerHTML = money
+          alloverMoney.value = money
+          // moneyChanged(alloverMoney.value)
+          // updateMoneyInDatabase(logUserId, alloverMoney.value);
+          
           investVal = value;
           afterBattingClick();
           cardgenBtnHandler();
@@ -195,3 +207,40 @@ betHandelerbtn.addEventListener("click", () => {
     }, 500);
   }
 });
+// const moneyChanged = (moneyChangedValue) => {
+//   console.log("Changed money by:", moneyChangedValue);
+//   // updateMoneyInDatabase(logUserId, moneyChangedValue);
+// };
+
+async function updateMoneyInDatabase(id, moneyChangedValue) {
+  try {
+    const response = await fetch(`http://localhost:3000/users/${id}`, {
+      method: "PATCH",  // Use PATCH for partial update
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ money: moneyChangedValue }),  // Send updated money
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to update money in the database.");
+    }
+
+    const updatedUser = await response.json();
+    console.log("Money updated successfully:", updatedUser);
+
+    // Optionally, you can update the UI here after the successful update
+    // For example, update the displayed money in the UI
+    let alloverMoney = document.getElementById("moneyOfBC");
+    alloverMoney.value = updatedUser.money;
+
+  } catch (error) {
+    console.error("Error updating money:", error);
+  }
+}
+
+
+
+
+
+

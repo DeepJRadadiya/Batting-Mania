@@ -2,39 +2,34 @@ const notyf = new Notyf();
 let userLogged = JSON.parse(localStorage.getItem("userLoggedIn")) || false;
 
 let joinNowbtn = document.getElementById("joinNowbtn");
+
+// Redirect Join Now Button
 joinNowbtn.addEventListener("click", () => {
-  if (!userLogged) {
-    window.location.href = "/views/login.html";
-  } else {
-    window.location.href = "/views/promotion.html";
-  }
+  window.location.href = userLogged
+    ? "/views/promotion.html"
+    : "/views/login.html";
 });
 
+// Game Cards
+let hiloGameCard = document.getElementById("hilo");
+let coinGameCard = document.getElementById("coin");
+let tossGameCard = document.getElementById("toss");
 
-let hiloGameCard = document.getElementById('hilo')
-let coinGameCard = document.getElementById('coin')
-let tossGameCard = document.getElementById('toss')
-const  CardentryError = ()=>{
-  if(!userLogged){
-    notyf.error('please login first to play')
-  }
-}
-hiloGameCard.addEventListener('click',()=>{
-  if(!userLogged){
-    notyf.error('please login first to play')
-  }
-  else{
-    //if user is loggin
-    window.location.href = '/views/HiloGame.html'
-  }
-})
-coinGameCard.addEventListener('click',()=>{
-  if(!userLogged){
-    notyf.error('please login first to play')
-  }
-  else{
-    //if user is loggin
-    window.location.href = '/views/CoinGame.html'
-  }
-})
-tossGameCard.addEventListener('click',CardentryError)
+hiloGameCard.addEventListener("click", () => {
+  userLogged
+    ? (window.location.href = "/views/HiloGame.html")
+    : notyf.error("Please login first to play");
+});
+
+coinGameCard.addEventListener("click", () => {
+  userLogged
+    ? (window.location.href = "/views/CoinGame.html")
+    : notyf.error("Please login first to play");
+});
+
+tossGameCard.addEventListener("click", () => {
+  userLogged
+    ? (window.location.href = "/views/CoinGame.html")
+    : notyf.error("Please login first to play");
+});
+

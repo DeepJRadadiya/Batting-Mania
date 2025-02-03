@@ -1,0 +1,113 @@
+.mineTitle{
+    margin-top: 10px;
+}
+
+.ranger{
+    height: 45px;
+    background-color: rgb(41, 45, 46);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: .5rem;
+    
+}
+.ranger span{
+    width: 20px;
+    color: #b3bec3;
+    /* border: 2px solid white; */
+}
+.range-input {
+  padding:10px 20px;
+  display:flex;
+  align-items:center;
+  border-radius:10px;
+}
+.range-input input {
+  margin-right: 10px;
+  -webkit-appearance:none;
+  width: 230px;
+  height:10px;
+  background:#9fe871;
+  border:none;
+  outline:none;
+border-radius: .5rem;
+}
+.range-input input::-webkit-slider-thumb {
+  -webkit-appearance:none;
+  width:18px;
+  height:25px;
+  background:#eee;
+  border-radius:10px;
+}
+
+.range-input .value {
+  color:#4471ef;
+  text-align:center;
+  font-weight:600;
+  line-height:40px;
+  height:40px;
+  overflow:hidden;
+  margin-left:10px;
+}
+.range-input .value div {
+  transition:all 300ms ease-in-out;
+}
+
+
+.batting-btn{
+margin: 30px 0;
+}
+.batting-btn button{
+    height: 45px;
+}
+.game-side{
+    background-image: url('../images/mine/bg-mines-dark-b7d1571a.png');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-direction: column;
+}
+.gameGround{
+    background-color: rgba(41, 45, 46, 0.867);
+    padding: 1rem;
+    width: 60%;
+    height: 100%;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    border-radius: 1rem;
+    
+}
+
+.gameBox{
+    height: 75px;
+    width: 83px;
+    border-radius:.5rem ;
+    background-color: rgb(68, 76, 77);
+}
+.gameBox:hover{
+    background-color: #5a6161;
+}
+
+.mineimg {
+  background-image: url(../images/mine/mines-1-0c3e7e76.png);
+  background-repeat: no-repeat;
+  background-size: 100%; 
+  background-position: center; 
+ 
+}
+
+.gemsimg{
+  background-image: url(../images/mine/gems-873c019a.png);
+  background-repeat: no-repeat;
+  background-size: 100%; 
+  background-position: center;  
+}
+
+.findbom{
+  filter: blur(2px);
+}

@@ -13,7 +13,7 @@ joinNowbtn.addEventListener("click", () => {
 // Game Cards
 let hiloGameCard = document.getElementById("hilo");
 let coinGameCard = document.getElementById("coin");
-let tossGameCard = document.getElementById("toss");
+let tossGameCard = document.getElementById("mine");
 
 hiloGameCard.addEventListener("click", () => {
   userLogged
@@ -29,7 +29,7 @@ coinGameCard.addEventListener("click", () => {
 
 tossGameCard.addEventListener("click", () => {
   userLogged
-    ? (window.location.href = "/views/CoinGame.html")
+    ? (window.location.href = "/views/MineGame.html")
     : notyf.error("Please login first to play");
 });
 

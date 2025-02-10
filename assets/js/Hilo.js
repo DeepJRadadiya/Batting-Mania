@@ -21,6 +21,7 @@ let profitCalFromHi = document.getElementById("profitCalFromHi");
 let profitCalFromLo = document.getElementById("profitCalFromLo");
 logUserId = logUserId.replace(/"/g, "").trim();
 
+
 let investVal = 0;
 let casoutState = false;
 let prevVal = null;

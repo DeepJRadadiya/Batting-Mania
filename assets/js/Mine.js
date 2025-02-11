@@ -38,7 +38,6 @@ function afterBattingClick() {
   doubletoMoney.style.cursor = "context-menu";
   betHandeler.classList.add("signoutbtn");
   betHandeler.innerText = "Cash out";
-
   rangeInput.disabled = true;
   ranger.classList.add(blurEffect);
 }
@@ -56,6 +55,8 @@ function afterCasoutClick() {
   doubletoMoney.style.cursor = "pointer";
   betHandeler.classList.remove("signoutbtn");
   betHandeler.innerText = "Bat";
+  rangeInput.disabled = false;
+  ranger.classList.remove(blurEffect);
 }
 
 // random number logic
@@ -131,6 +132,7 @@ function gameHandlingFun() {
           box.classList.add("mineimg");
           box.classList.add("bomb");
         } else {
+          
           box.classList.add("findbom");
           box.classList.add("gemsimg");
           box.classList.add("gem");
@@ -157,7 +159,8 @@ function gameHandlingFun() {
           revealAllBoxes();
         } else {
           console.log(box)
-          box.classList.add("gemsimg","gem")
+          box.classList.add("animations","gemsimg","gem")
+
         }
       });
     });
@@ -176,14 +179,9 @@ betHandeler.addEventListener("click", () => {
       if (Number(alloverMoney.value) < values) {
         notyf.error("you hav not enough balance");
       } else {
-        const bombCount = Number(minSpan.innerHTML);
-        if (bombCount <= 0) {
-          notyf.error("select bomb range");
-        } else {
           alloverMoney.value = money;
           afterBattingClick();
           gameHandlingFun();
-        }
       }
     } else {
       notyf.error("money out of range");
@@ -195,3 +193,32 @@ betHandeler.addEventListener("click", () => {
     afterCasoutClick();
   }
 });
+
+
+
+// update money on databse when chnage the score
+async function updateMoneyInDatabase(id, moneyChangedValue) {
+  try {
+    const response = await fetch(`http://localhost:3000/users/${id}`, {
+      method: "PATCH", // Use PATCH for partial update
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ money: moneyChangedValue }), // Send updated money
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to update money in the database.");
+    }
+
+    const updatedUser = await response.json();
+    console.log("Money updated successfully:", updatedUser);
+
+    // Optionally, you can update the UI here after the successful update
+    // For example, update the displayed money in the UI
+    let alloverMoney = document.getElementById("moneyOfBC");
+    alloverMoney.value = updatedUser.money;
+  } catch (error) {
+    console.error("Error updating money:", error);
+  }
+}

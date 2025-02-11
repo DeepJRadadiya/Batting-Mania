@@ -89,12 +89,6 @@ margin: 30px 0;
     border-radius:.5rem ;
     background-color: rgb(68, 76, 77);
 }
-.gameBox:hover{
-    background-color: #5a6161;
-}
-
-
-
 
 /* css through js */
 
@@ -108,9 +102,6 @@ margin: 30px 0;
 }
 
 .gemsimg{
-  background-color: rgb(125, 64, 207);
-  
-
   background-image: url(../images/mine/gems-873c019a.png);
   background-repeat: no-repeat;
   background-size: 100%; 
@@ -130,6 +121,7 @@ margin: 30px 0;
   transition: all ease-in-out 0.4s;
 }
 
-.animation{
-  transition: 0.3s ease-in-out 0s 1 normal none running breathe;
+.animations{
+  background-color: rgb(125, 64, 207);
+  
 }

@@ -319,7 +319,7 @@ betHandelerbtn.addEventListener("click", (event) => {
     //button will be work as bat btn
     if (values == 0) {
       notyf.error("add money first");
-    } else if (values > 0 && values <= 50000000000000000) {
+    } else if (values > 0 && values <= 500000) {
       money = Number(alloverMoney.value) - values;
       console.log(alloverMoney.value, money, values);
       if (Number(alloverMoney.value) < values) {

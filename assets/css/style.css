@@ -185,7 +185,7 @@ body {
     background-color: transparent;
     border: none;
     outline: none;
-    width: 70px;
+    width: 100px;
     height: 30px;
     color: white;
     font-weight: 800;
@@ -193,6 +193,7 @@ body {
     margin-left: 2px;
     user-select: none;
 }
+
 #price span {
     font-weight: 800;
     font-size: 18px;

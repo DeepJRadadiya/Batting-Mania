@@ -26,7 +26,8 @@
 
     <!-- css -->
     <link rel="stylesheet" href="../assets/css/style.css" />
-    <link rel="stylesheet" href="../assets/css/hilogame.css">
+    <link rel="stylesheet" href="../assets/css/hilogame.css" />
+    <link rel="stylesheet" href="../assets/css/coingame.css">
 
     <!-- toster -->
     <link
@@ -36,44 +37,97 @@
     <script src="https://cdn.jsdelivr.net/npm/notyf@3.1.0/notyf.min.js"></script>
   </head>
   <body>
-     <!-- this is custom-hearder for navbar-->
-     <custom-header></custom-header>
-     <div class="overlay" id="overlay"></div>
- 
-     <!-- profile card -->
-     <section>
-       <div class="profile-card" id="profile-card">
-         <div class="profile-Head">
-           <h1>My Profile</h1>
-           <button class="profile-close" id="profile-close">
-             <i class="fa-solid fa-xmark" style="color: white !important"></i>
-           </button>
-         </div>
-         <div class="profile-body">
-           <img
-             src="../assets/images/profile/profile.png"
-             alt="Profile Picture"
-           />
-           <h3>John Doe</h3>
-           <p>Email: johndoe@example.com</p>
-           <button id="logout-btn" class="logoutbtn">Logout</button>
-         </div>
-       </div>
-     </section>
+    <!-- this is custom-hearder for navbar-->
+    <custom-header></custom-header>
+    <div class="overlay" id="overlay"></div>
+
+    <!-- profile card -->
+    <section>
+      <div class="profile-card" id="profile-card">
+        <div class="profile-Head">
+          <h1>My Profile</h1>
+          <button class="profile-close" id="profile-close">
+            <i class="fa-solid fa-xmark" style="color: white !important"></i>
+          </button>
+        </div>
+        <div class="profile-body">
+          <img
+            src="../assets/images/profile/profile.png"
+            alt="Profile Picture"
+          />
+          <h3>John Doe</h3>
+          <p>Email: johndoe@example.com</p>
+          <button id="logout-btn" class="logoutbtn">Logout</button>
+        </div>
+      </div>
+    </section>
+
 
     <!-- hilo game arena -->
-     <section>
-            <div class="game-arena">
-                <div class="batting-side"></div>
-                <div class="game-side"></div>
+    <section>
+      <div class="game-arena">
+
+        <div class="batting-side">
+          <p>Amount</p>
+          <div class="secoreBord" id="scoreingTab">
+            <div class="scoreDisp">
+              <img src="../assets/images/icons/INR.rect.png" alt="inr flag" />
+              <input
+                type="number"
+                id="batingMoney"
+                value=""
+                minlength="0"
+                maxlength="5"
+                placeholder="0.00"
+              />
             </div>
-     </section>
+            <div class="incbutton">
+              <button id="halftoMoney">1/2</button>
+              <button id="doubletoMoney">2x</button>
+            </div>
+          </div>
+
+          <div class="choiceBar opacity" id="choiceBar">
+            <button class="headBar" id="headBar" disabled>
+              <img src="../assets/images/coins/head.png" alt="head coin">
+              <span>Bet Heads</span>
+            </button>
+            <button class="tailBar" id="tailBar" disabled>
+              <img src="../assets/images/coins/tail.png" alt="tail coin">
+              <span>Bet Tails</span>
+            </button>
+          </div>
+
+          <div class="batting-btn">       
+            <button class="bet-btn" id="betHandeler" type="button">Bet</button>
+          </div>
+        </div>
 
 
+        <div class="game-side">
+          <div class="seriesTab">
+            <span id="winCount">0</span>
+            <span>Series</span>
+          </div>
+          <div class="coinTab coin" id="coin">
+            <div class="heads">
+              <img src="../assets/images/coins/head.png" alt="head img" id="coin1" class="coin" />
+            </div>
+      
+            <div class="tails">
+              <img src="../assets/images/coins/tail.png" alt="tail img" id="coin2" class="coin" />
+            </div>
+          </div>
+          <div class="multiplyTab">
+            <p>x<span>1.98</span></p>
+            <span>Multiply</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-
-
-     <script src="../assets/js/customTag.js"></script>
+    <script src="../assets/js/CoinGame.js"></script>
+    <script src="../assets/js/customTag.js"></script>
     <script src="../assets/js/main.js"></script>
     <script src="../assets/js/Profilecard.js"></script>
   </body>

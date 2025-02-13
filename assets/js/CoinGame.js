@@ -1,5 +1,6 @@
-const notyf = new Notyf();
+// const notyf = new Notyf();
 
+let alloverMoney = document.getElementById("moneyOfBC");
 let headBar = document.getElementById("headBar");
 let tailBar = document.getElementById("tailBar");
 let betHandeler = document.getElementById("betHandeler");
@@ -9,16 +10,33 @@ let winCount = document.getElementById("winCount");
 let batingMoney = document.getElementById("batingMoney");
 let halftoMoney = document.getElementById("halftoMoney");
 let doubletoMoney = document.getElementById("doubletoMoney");
+let profiter = document.getElementById("profiter");
+let pro = document.getElementById("pro");
+
+let logUserId = localStorage.getItem("loggedinUserId");
+logUserId = logUserId.replace(/"/g, "").trim();
 
 let coinState = "";
 let heads = 0;
 let tails = 0;
 let casoutState = false;
 let score = 0;
+let money = 0;
+let profiterVal = 1.98;
+let investVal = 0
 
+let batAudio = new Audio("../assets/audio/coin/bet.mp3");
+let cashoutAudio = new Audio("../assets/audio/coin/cashout.mp3");
+let loseAudio = new Audio("../assets/audio/coin/lose.mp3");
+let startAudio = new Audio("../assets/audio/coin/start.mp3");
+let winAudio = new Audio("../assets/audio/coin/win.mp3");
+
+console.log(logUserId)
 //main animation and game logic
 function animationHandler() {
-   heads,tails = 0;
+  heads = 0;
+  tails = 0;
+  startAudio.play();
   let coin = document.querySelector(".coin");
   function disableButton() {
     betHandeler.disabled = true;
@@ -43,31 +61,43 @@ function animationHandler() {
 }
 
 function gameHandler() {
+  console.log(heads,tails)
+  profiterVal = profiterVal + Number(profiter.innerHTML)
   if (coinState == "head" && heads > 0) {
     setTimeout(() => {
+      winAudio.play();
         winCount.innerHTML = Number(winCount.innerHTML) + 1;
+        profiter.innerHTML =  profiterVal
         setTimeout(() => {
             tailBar.disabled = false
+            headBar.disabled = false
         }, 1000);
     }, 2000);
   } else if (coinState == "tail" && tails > 0) {
     setTimeout(() => {
+      winAudio.play();
         winCount.innerHTML = Number(winCount.innerHTML) + 1;
+        profiter.innerHTML =  Number(profiterVal) 
         setTimeout(() => {
-            headBarBar.disabled = false
+            headBar.disabled = false
+            tailBar.disabled = false
         }, 1000);
     }, 2000);
   }
   else{
     setTimeout(() => {
+      loseAudio.play();
         notyf.error('your are out');
-        location.reload();
-    }, 3000);
+        pro.style.color = 'red'
+        profiterVal = 0
+        afterCasoutClick();
+    }, 4000);
   }
 }
 
 // after click on bating button
 function afterBattingClick() {
+  batAudio.play();
   headBar.classList.add("btnAnimation");
   tailBar.classList.add("btnAnimation");
   headBar.disabled = false;
@@ -82,20 +112,50 @@ function afterBattingClick() {
   doubletoMoney.disabled = true;
   halftoMoney.style.cursor = "no-drop";
   doubletoMoney.style.cursor = "no-drop";
+  headBar.style.cursor = "pointer";
+  tailBar.style.cursor = "pointer";
 }
 
 function afterCasoutClick() {
+  
+  headBar.classList.remove("btnAnimation");
+  tailBar.classList.remove("btnAnimation");
+  headBar.disabled = true;
+  tailBar.disabled = true;
+  scoreingTab.classList.remove("opacity");
+  choiceBar.classList.add("opacity");
+  betHandeler.innerText = "Bat";
+  betHandeler.style.cursor = "pointer";
+  betHandeler.classList.remove("btnStyle");
   betHandeler.disabled = false;
   halftoMoney.disabled = false;
   doubletoMoney.disabled = false;
   halftoMoney.style.cursor = "pointer";
   doubletoMoney.style.cursor = "pointer";
+  betHandeler.classList.remove("signoutbtn");
+  if (Number(profiterVal) != 0) {
+    console.log()
+    alloverMoney.value = Number(alloverMoney.value) + (Number(profiterVal) *  Number(investVal));
+    cashoutAudio.play();
+    setTimeout(() => {
+      updateMoneyInDatabase(logUserId, Number(alloverMoney.value));
+    }, 5000);
+  } 
+  else{
+  alloverMoney.value =Number(alloverMoney.value);
+  }
+  setTimeout(() => {
+  updateMoneyInDatabase(logUserId, Number(alloverMoney.value));
+  }, 2000);
+  totalProfitScore.innerHTML = 0;
 }
+
 headBar.addEventListener("click", () => {
   coinState = "head";
   animationHandler();
   gameHandler();
   tailBar.disabled = true;
+  headBar.disabled = true;
   betHandeler.innerText = "CaseOut";
   betHandeler.classList.remove("btnStyle");
   betHandeler.disabled = false;
@@ -107,6 +167,7 @@ tailBar.addEventListener("click", () => {
   animationHandler();
   gameHandler();
   headBar.disabled = true;
+  tailBar.disabled = true;
   betHandeler.innerText = "CaseOut";
   betHandeler.classList.remove("btnStyle");
   betHandeler.disabled = false;
@@ -115,13 +176,24 @@ tailBar.addEventListener("click", () => {
 });
 
 betHandeler.addEventListener("click", () => {
+  let values = Number(batingMoney.value);
   if (!casoutState) {
-    console.log("clicked");
-    if (batingMoney.value > 0) {
-      afterBattingClick();
-      casoutState = true;
-    } else {
+    if (values == 0) {
       notyf.error("add money first");
+    } else if (values > 0 && values <= 5000) {
+      money = Number(alloverMoney.value) - values;
+      // console.log(alloverMoney.value, money, values);
+      if (Number(alloverMoney.value) < values) {
+        notyf.error("you hav not enough balance");
+      } else {
+        investVal = Number(batingMoney.value);
+        alloverMoney.value = money.toFixed(2);
+        afterBattingClick();
+        casoutState = true;
+      }
+    } else {
+      notyf.error("money out of range");
+      casoutState = true;
     }
   } else {
     afterCasoutClick();

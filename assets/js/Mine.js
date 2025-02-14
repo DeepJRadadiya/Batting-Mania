@@ -238,7 +238,7 @@ betHandeler.addEventListener("click", () => {
   if (!casoutState) {
     if (values == 0) {
       notyf.error("add money first");
-    } else if (values > 0 && values <= 5000) {
+    } else if (values > 1 && values <= 5000000) {
       money = Number(alloverMoney.value) - values;
       console.log(alloverMoney.value, money, values);
       if (Number(alloverMoney.value) < values) {

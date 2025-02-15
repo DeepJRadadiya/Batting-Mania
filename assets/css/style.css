@@ -205,7 +205,13 @@ body {
     padding-right: 5px;
 }
 
-
+.sponsorship, .promoson, .support{
+    height: 38px;
+    border-radius: .5rem;
+    width: 40px;
+    align-content: center;
+    background-color: rgb(58,65,66);
+}
 
 
 /* profile card */
@@ -214,6 +220,7 @@ body {
     top: 20%;
     right: 27%;
     width: 45%;
+    height: 60vh; 
     background-color: rgb(36, 38, 38);
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
@@ -221,6 +228,8 @@ body {
     display: none;
     z-index: 200;
     color: white;
+    overflow-y: auto; 
+    max-height: 80vh; 
 }
 
 .profile-Head {
@@ -277,7 +286,23 @@ padding: 20px;
     /* scroll-behavior: smooth; */
 }
 
+.nodata{
+    height: 300px;
+    width: 90%;
+    background-color:rgb(50,55,56);
+    margin-left: 30px;
+    border-radius: .5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 
+}
+.nodata img{
+    width: 300px;
+    height: 60%;
+    object-fit: contain;
+}
 
 
 /* main container */

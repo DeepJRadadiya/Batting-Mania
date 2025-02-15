@@ -30,14 +30,14 @@ class CustomHeader extends HTMLElement {
                                     </div>
                                 </div>
                                 <div class="currancy-btn">
-                                    <i class="fa-solid fa-angle-down fa-sm" style="color: rgb(250, 251, 255);"></i>
+                                    
                                     <button type="submit">Deposit</button>
                                 </div>
                             </div>
                         </li>
-                        <li><a href="#">Support</a></li>
-                        <li><a href="promotion.html">Promotion</a></li>
-                        <li><a href="#">Sponsorships</a></li>
+                        <li class="support"><a href="#"><i class="fa-solid fa-headset" style=" color: rgba(255, 255, 255, 0.650)";></i></a></li>
+                        <li class="promoson"><a href="promotion.html"><i class="fa-solid fa-bullhorn" style=" color: rgba(255, 255, 255, 0.650)";></i></a></li>
+                        <li class="sponsorship"><a href="#"><i class="fa-solid fa-handshake" style=" color: rgba(255, 255, 255, 0.650) ;"></i></a></li>
                         <li class="profile"><a href="#"><img src="../assets/images/profile/profile.png" alt="profile img" class="profile-img" id="profile-btn"></a></li>
                     </ul>
                 </div>

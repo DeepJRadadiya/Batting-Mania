@@ -50,6 +50,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   if (user) {
     if (userEmails) {
       userEmails.innerHTML = user.email;
+      firstLogin.innerHTML = user.date.split('T')[0]
+      
     }
     if (userName) {
       userName.innerHTML = user.email.split("@")[0];

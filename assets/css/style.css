@@ -114,6 +114,12 @@ body {
     height: 100%;
     border-radius: 50%;
 }
+.firstLogin{
+    color:#9ca3a389;
+    margin: 10px;
+    font-weight: 700;
+    font-size: 14px;
+}
 
 .logoutbtn,
 .signupbtn {

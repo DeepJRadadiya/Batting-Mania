@@ -104,6 +104,6 @@ async function abcfun() {
     
   } catch (error) {
     console.error("Server error:", error.message);
-    alert("Server error: " + error.message); // Handle error gracefully
+    // alert("Server error: " + error.message); // Handle error gracefully
   }
 }

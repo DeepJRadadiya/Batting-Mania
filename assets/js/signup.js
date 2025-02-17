@@ -19,7 +19,7 @@ form.addEventListener('submit', async (event) => {
             const users = await response.json();
 
             const emailExists = users.some(user => user.email === email);
-
+            const firstSignInTime = new Date().toISOString();
             if (emailExists) {
                 notyf.error('This email is already registered. Please log in.');
                 document.getElementById('email').style.border = '2px solid orange';
@@ -30,7 +30,8 @@ form.addEventListener('submit', async (event) => {
                     email,
                     pass: password,
                     isLoggined: true,
-                    money: 1000
+                    money: 1000,
+                    date: firstSignInTime
                 };
 
                 // Add the new user to db.json

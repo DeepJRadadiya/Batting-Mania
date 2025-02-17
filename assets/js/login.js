@@ -43,7 +43,7 @@ form.addEventListener("submit", async (event) => {
           localStorage.setItem("loggedInUser", JSON.stringify(user)); // user details
           localStorage.setItem("userLoggedIn", true); //  login status
           localStorage.setItem('loggedinUserId',JSON.stringify(user.id))
-          
+          localStorage.setItem("firstSignup",JSON.stringify(user.date))
           notyf.success(`Welcome, BC.Game's hero!`);
           setTimeout(() => {
             window.location.href = "index.html"; // redirect to index page

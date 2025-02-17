@@ -122,15 +122,14 @@ function afterCasoutClick() {
   HiloCardImg.style.outline = "";
   casoutState = false;
   if (Number(totalProfitScore.innerHTML) != 0) {
-    alloverMoney.value =
-      Number(alloverMoney.value) + Number(score) + Number(investVal);
+    alloverMoney.value = (Number(alloverMoney.value) + Number(score) + Number(investVal)).toFixed(2);
     casoutAudio.play();
     setTimeout(() => {
       updateMoneyInDatabase(logUserId, Number(alloverMoney.value));
     }, 5000);
   } 
   else{
-  alloverMoney.value =Number(alloverMoney.value);
+  alloverMoney.value = (Number(alloverMoney.value)).toFixed(2);
   }
   setTimeout(() => {
   updateMoneyInDatabase(logUserId, Number(alloverMoney.value));
@@ -293,7 +292,7 @@ betHandelerbtn.addEventListener("click", (event) => {
       if (Number(alloverMoney.value) < values) {
         notyf.error("you hav not enough balance");
       } else {
-        alloverMoney.value = money;
+        alloverMoney.value = money.toFixed(2);
         totalProfitScore.innerHTML = Number(score.toFixed(2));
         investVal = values;
         console.log(values);

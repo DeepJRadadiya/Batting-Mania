@@ -1,25 +1,12 @@
 {
   "users": [
     {
-      "id": "51de",
+      "id": "bbca",
       "email": "deepradadiya0987@gmail.com",
-      "pass": "deep@124",
+      "pass": "deep@1234",
       "isLoggined": true,
-      "money": 1000
-    },
-    {
-      "id": "51bc",
-      "email": "abc@gmail.com",
-      "pass": "abc1234",
-      "isLoggined": true,
-      "money": 1000
-    },
-    {
-      "id": "3046",
-      "email": "aniruddh@gmail.com",
-      "pass": "123456",
-      "isLoggined": true,
-      "money": 175
+      "money": 1009.8,
+      "date": "2025-02-17T15:29:08.417Z"
     }
   ]
 }

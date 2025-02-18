@@ -61,6 +61,7 @@ function animationHandler() {
 }
 
 function gameHandler() {
+  betHandeler.disabled = true;
   console.log(heads,tails)
   profiterVal = profiterVal + Number(profiter.innerHTML)
   if (coinState == "head" && heads > 0) {
@@ -71,6 +72,7 @@ function gameHandler() {
         setTimeout(() => {
             tailBar.disabled = false
             headBar.disabled = false
+            betHandeler.disabled = false;
         }, 1000);
     }, 2000);
   } else if (coinState == "tail" && tails > 0) {
@@ -81,17 +83,19 @@ function gameHandler() {
         setTimeout(() => {
             headBar.disabled = false
             tailBar.disabled = false
+            betHandeler.disabled = false;
         }, 1000);
     }, 2000);
   }
   else{
+    
     setTimeout(() => {
       loseAudio.play();
         notyf.error('your are out');
         pro.style.color = 'red'
         profiterVal = 0
         afterCasoutClick();
-    }, 4000);
+    }, 1000);
   }
 }
 
@@ -117,7 +121,6 @@ function afterBattingClick() {
 }
 
 function afterCasoutClick() {
-  
   headBar.classList.remove("btnAnimation");
   tailBar.classList.remove("btnAnimation");
   headBar.disabled = true;
@@ -135,44 +138,51 @@ function afterCasoutClick() {
   betHandeler.classList.remove("signoutbtn");
   if (Number(profiterVal) != 0) {
     console.log()
-    alloverMoney.value = Number(alloverMoney.value) + (Number(profiterVal) *  Number(investVal));
+    alloverMoney.value = (Number(alloverMoney.value) + (Number(profiterVal) *  Number(investVal))).toFixed(2);
     cashoutAudio.play();
     setTimeout(() => {
       updateMoneyInDatabase(logUserId, Number(alloverMoney.value));
-    }, 5000);
+    }, 2000);
   } 
   else{
-  alloverMoney.value =Number(alloverMoney.value);
-  }
+  alloverMoney.value =Number(alloverMoney.value).toFixed(2);
   setTimeout(() => {
-  updateMoneyInDatabase(logUserId, Number(alloverMoney.value));
-  }, 2000);
-  totalProfitScore.innerHTML = 0;
+    updateMoneyInDatabase(logUserId, Number(alloverMoney.value));
+    }, 1000);
+  }
+  profiterVal = 0
+  
 }
 
 headBar.addEventListener("click", () => {
   coinState = "head";
   animationHandler();
   gameHandler();
+  betHandeler.disabled = true
   tailBar.disabled = true;
   headBar.disabled = true;
-  betHandeler.innerText = "CaseOut";
-  betHandeler.classList.remove("btnStyle");
-  betHandeler.disabled = false;
-  betHandeler.classList.add("signoutbtn");
-  betHandeler.style.cursor = "pointer";
+  setTimeout(()=>{
+    betHandeler.innerText = "CaseOut";
+    betHandeler.classList.remove("btnStyle");
+    betHandeler.disabled = false;
+    betHandeler.classList.add("signoutbtn");
+    betHandeler.style.cursor = "pointer";
+  },2000)
 });
 tailBar.addEventListener("click", () => {
   coinState = "tail";
   animationHandler();
   gameHandler();
+  betHandeler.disabled = true
   headBar.disabled = true;
   tailBar.disabled = true;
-  betHandeler.innerText = "CaseOut";
+  setTimeout(() => {
+    betHandeler.innerText = "CaseOut";
   betHandeler.classList.remove("btnStyle");
   betHandeler.disabled = false;
   betHandeler.classList.add("signoutbtn");
   betHandeler.style.cursor = "pointer";
+  }, 2000);
 });
 
 betHandeler.addEventListener("click", () => {

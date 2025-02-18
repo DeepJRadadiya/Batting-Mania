@@ -83,7 +83,7 @@ body {
 
 .currancy-bar {
     height: 45px;
-    width: 300px;
+    width: 200px;
     display: flex;
     justify-content: space-between;
     text-align: center;

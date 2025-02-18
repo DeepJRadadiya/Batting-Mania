@@ -29,15 +29,10 @@ class CustomHeader extends HTMLElement {
                                         <span><input type='text' name='money' id='moneyOfBC' value='0'  disabled/></span>
                                     </div>
                                 </div>
-                                <div class="currancy-btn">
-                                    
-                                    <button type="submit">Deposit</button>
-                                </div>
                             </div>
                         </li>
-                        <li class="support"><a href="#"><i class="fa-solid fa-headset" style=" color: rgba(255, 255, 255, 0.650)";></i></a></li>
                         <li class="promoson"><a href="promotion.html"><i class="fa-solid fa-bullhorn" style=" color: rgba(255, 255, 255, 0.650)";></i></a></li>
-                        <li class="sponsorship"><a href="#"><i class="fa-solid fa-handshake" style=" color: rgba(255, 255, 255, 0.650) ;"></i></a></li>
+                        <li class="sponsorship"><a href="sponsorship.html"><i class="fa-solid fa-handshake" style=" color: rgba(255, 255, 255, 0.650) ;"></i></a></li>
                         <li class="profile"><a href="#"><img src="../assets/images/profile/profile.png" alt="profile img" class="profile-img" id="profile-btn"></a></li>
                     </ul>
                 </div>
@@ -61,9 +56,8 @@ class CustomHeader extends HTMLElement {
                         <a href='index.html'><img src="../assets/images/icons/logo.png" alt="logo"></a>
                     </div>
                     <ul>
-                        <li><a href="#">Support</a></li>
-                        <li><a href="promotion.html">Promotion</a></li>
-                        <li><a href="#">Sponsorships</a></li>
+                        <li class="promoson"><a href="promotion.html"><i class="fa-solid fa-bullhorn" style=" color: rgba(255, 255, 255, 0.650)";></i></a></li>
+                        <li class="sponsorship"><a href="sponsorship.html"><i class="fa-solid fa-handshake" style=" color: rgba(255, 255, 255, 0.650) ;"></i></a></li>
                         <li><button class="loginbtn"><a href="/views/login.html">Login</a></button></li>
                         <li><button class="signupbtn"><a href="/views/signup.html">Signup</a></button></li>
                     </ul>

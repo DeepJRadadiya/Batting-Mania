@@ -5,8 +5,8 @@ form.addEventListener('submit', async (event) => {
     event.preventDefault();
 
     // Get form data
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
+    const email = document.getElementById('email').value.toLowerCase();
+    const password = document.getElementById('password').value.toLowerCase();
 
     if (email.length === 0 || password.length === 0) {
         notyf.error('Email or password is blank');

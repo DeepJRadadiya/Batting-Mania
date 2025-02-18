@@ -126,14 +126,14 @@ function afterCasoutClick() {
     casoutAudio.play();
     setTimeout(() => {
       updateMoneyInDatabase(logUserId, Number(alloverMoney.value));
-    }, 5000);
+    }, 2000);
   } 
   else{
   alloverMoney.value = (Number(alloverMoney.value)).toFixed(2);
-  }
   setTimeout(() => {
   updateMoneyInDatabase(logUserId, Number(alloverMoney.value));
-  }, 2000);
+  }, 500);
+  }
   totalProfitScore.innerHTML = 0;
 }
 
@@ -226,7 +226,7 @@ function gameHandler() {
       hiProfiter.innerHTML, (loProfiter.innerHTML = 0), 0;
       setTimeout(() => {
         afterCasoutClick();
-      }, 2000);
+      }, 1500);
     } else {
       totalProfitScore.innerHTML = Number(score.toFixed(2));
       console.log(totalProfitScore.innerHTML, score);
@@ -241,13 +241,11 @@ function gameHandler() {
       score += Number(
         (investVal * profitMultipler[prevVal].h - investVal).toFixed(2)
       );
-      scoreset();
-      cardgenAudio.pause();
       winAudio.play();
+      scoreset();
     } else {
       console.log("game over");
       score = 0;
-      cardgenAudio.pause();
       lossAudio.play();
       scoreset();
     }
@@ -261,13 +259,11 @@ function gameHandler() {
       score += Number(
         (investVal * profitMultipler[prevVal].l - investVal).toFixed(2)
       );
-      cardgenAudio.pause();
       winAudio.play();
       scoreset();
     } else {
       console.log("game over");
       score = 0;
-      cardgenAudio.pause();
       lossAudio.play();
       scoreset();
     }

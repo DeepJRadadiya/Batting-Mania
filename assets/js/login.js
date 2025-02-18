@@ -19,7 +19,7 @@ form.addEventListener("submit", async (event) => {
 
   const email = document.getElementById("email");
   const password = document.getElementById("password");
-  const emailvalue = email.value;
+  const emailvalue = email.value.toLowerCase();
   const passwordvalue = password.value;
 
   if (emailvalue.length == 0 || passwordvalue.length == 0) {
@@ -46,7 +46,8 @@ form.addEventListener("submit", async (event) => {
           localStorage.setItem("firstSignup",JSON.stringify(user.date))
           notyf.success(`Welcome, BC.Game's hero!`);
           setTimeout(() => {
-            window.location.href = "index.html"; // redirect to index page
+            window.location.href = "index.html";
+            // redirect to index page
           }, 1500);//sec in ms
          
         } else {

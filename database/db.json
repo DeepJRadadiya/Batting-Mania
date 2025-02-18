@@ -7,6 +7,14 @@
       "isLoggined": true,
       "money": 1009.8,
       "date": "2025-02-17T15:29:08.417Z"
+    },
+    {
+      "id": "01a7",
+      "email": "grk@gmail.com",
+      "pass": "12345678asdf",
+      "isLoggined": true,
+      "money": 866.64,
+      "date": "2025-02-18T12:42:35.642Z"
     }
   ]
 }

@@ -1,0 +1,46 @@
+.content{
+    margin: 80px 85px 10px 85px;
+}
+.poster-text p{
+    padding-left: 150px;
+    font-weight: 800;
+    font-size: 35px;
+}
+
+.main-content{
+    padding: 30px 10px;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(50,55,56);
+    color: white;
+    border-radius: 1rem;
+    
+}
+.card1{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 0 20px 0;
+    padding: 10px 0;
+    /* border: 2px solid red; */
+}
+.cardText{
+    width: 45%;
+}
+.cardText p {
+    padding: 10px 0;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 800;
+}
+.cardText span{
+    padding: 20px 0;
+    color: #b3bec1;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.cardImg{
+    width: 45%;
+    object-fit: cover;
+}

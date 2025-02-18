@@ -2,10 +2,12 @@ const notyf = new Notyf();
 
 let userLogged = JSON.parse(localStorage.getItem("userLoggedIn")) || false;
 let joinNowbtn = document.getElementById("joinNowbtn");
+let logincChange = document.getElementById("logincChange")
+
 // Redirect Join Now Button
 joinNowbtn.addEventListener("click", () => {
   window.location.href = userLogged
-    ? "/views/promotion.html"
+    ? "/views/HiloGame.html"
     : "/views/login.html";
 });
 
@@ -13,6 +15,8 @@ joinNowbtn.addEventListener("click", () => {
 let hiloGameCard = document.getElementById("hilo");
 let coinGameCard = document.getElementById("coin");
 let tossGameCard = document.getElementById("mine");
+logincChange.innerText = userLogged ? "Play Game & Get" : "Sign Up & Get";
+joinNowbtn.innerText = userLogged ? "Play Game" : "join now";
 
 hiloGameCard.addEventListener("click", () => {
   userLogged

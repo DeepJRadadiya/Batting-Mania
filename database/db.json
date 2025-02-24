@@ -5,7 +5,7 @@
       "email": "deepradadiya0987@gmail.com",
       "pass": "deep@1234",
       "isLoggined": true,
-      "money": 1009.8,
+      "money": 986.2,
       "date": "2025-02-17T15:29:08.417Z"
     },
     {
@@ -23,6 +23,14 @@
       "isLoggined": true,
       "money": 1504.8,
       "date": "2025-02-18T13:35:48.079Z"
+    },
+    {
+      "id": "ac95",
+      "email": "deepradadiya@gmail.com",
+      "pass": "deep@1234",
+      "isLoggined": true,
+      "money": 1000,
+      "date": "2025-02-24T03:35:40.214Z"
     }
   ]
 }

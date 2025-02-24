@@ -74,9 +74,6 @@ const probabilityMultipler = {
   13: { h: "7.69%", l: "92.31%" }
 };
 
-
-
-
 // disabel all btn
 const elements = [cardskipBtn1, cardskipBtn2, hiImg, lowImg];
 elements.forEach((el) => (el.style.cursor = "not-allowed"));
@@ -166,11 +163,6 @@ function cardgenBtnHandlers() {
     ).toFixed(2)
   );
 
-  // profitCalFromHi.innerHTML = Number(((investVal + score) * profitMultipler[randVal].h ) - investVal)
-  // profitCalFromLo.innerHTML =  Number(((investVal + score) * profitMultipler[randVal].l ) - investVal)
-  // console.log('profit',profitCalFromHi,profitCalFromHi)
-  // console.log(profitMultipler[randVal].h,profitMultipler[randVal].l)
-
   skipAudio.play();
   setTimeout(() => {
     cardgenAudio.play();
@@ -201,11 +193,6 @@ function cardgenBtnHandler() {
       Number(investVal)
     ).toFixed(2)
   );
-
-  // profitCalFromHi.innerHTML = Number(((investVal + score) * profitMultipler[randVal].h ) - investVal)
-  // profitCalFromLo.innerHTML =  Number(((investVal + score) * profitMultipler[randVal].l ) - investVal)
-  // console.log('profit',profitCalFromHi.innerHTML,profitCalFromHi.innerHTML)
-  // console.log(profitMultipler[randVal].h,profitMultipler[randVal].l)
   cardgenAudio.play();
   HiloCardImg.src = "../assets/images/cards/" + randVal + ".png";
 }

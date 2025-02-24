@@ -79,8 +79,6 @@ class CustomHeader extends HTMLElement {
     this.render();
   }
 }
-customElements.define("custom-header", CustomHeader); // Define the custom element
-
 
 async function abcfun() {
   let logUserId = localStorage.getItem("loggedinUserId");
@@ -101,3 +99,6 @@ async function abcfun() {
     // alert("Server error: " + error.message); // Handle error gracefully
   }
 }
+
+
+customElements.define("custom-header", CustomHeader); // Define the custom element

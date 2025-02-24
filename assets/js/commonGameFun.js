@@ -28,14 +28,14 @@ doubletoMoney.addEventListener("click", () => {
   } else {
     notyf.error("Minimum bet is 10");
   }
-});
+}); 
 
 
 //logic for update money in database
 async function updateMoneyInDatabase(id, moneyChangedValue) {
   try {
     const response = await fetch(`http://localhost:3000/users/${id}`, {
-      method: "PATCH", // Use PATCH for partial update
+     method: "PATCH", // use PATCH for partial update
       headers: {
         "Content-Type": "application/json",
       },

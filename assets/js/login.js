@@ -2,8 +2,10 @@
 let signupImg = document.getElementById("signup-img");
 let originalImg = "../assets/images/other/mainbg1.a54313bf.png";
 let newImg = "../assets/images/other/mainbg2.70dbb460.png";
+
 let isOriginal = true;
 function changeImg() {
+
   setTimeout(() => {
     // Change the image source
     signupImg.src = isOriginal ? newImg : originalImg;

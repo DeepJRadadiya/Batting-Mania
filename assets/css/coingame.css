@@ -37,8 +37,7 @@
 }
 
 .btnAnimation:active {
-    transform: translateY(1.5px) scale(1.02);
-
+    transform: translate(2.3);
 }
 
 .opacity {
